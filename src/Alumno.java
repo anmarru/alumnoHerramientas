@@ -28,14 +28,14 @@ public class Alumno implements Runnable {
     @Override
     public void run() {
 
-        //Se ejecuta de manera infinita
+        
         while (true) {
             BancoHerramientas.cogerHerramienta(sacarNumAleatorio(),sacarNumAleatorio(), getNomAlumno());
 
-            //Cuando el hilo acaba con las herramientas descansa un tiempo aleatorio
+            //Cuando el hilo acaba con las herramientas descansa un tiempo aleatorio entre 1 y 2 segundos
             try {
-                int timpoAleatorioDescando = ThreadLocalRandom.current().nextInt(1000,2000+1);
-                Thread.sleep(timpoAleatorioDescando);
+                int descansoAleatorio = ThreadLocalRandom.current().nextInt(1000,2000+1);
+                Thread.sleep(descansoAleatorio);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
